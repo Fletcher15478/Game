@@ -438,4 +438,3 @@ window.addEventListener("DOMContentLoaded", () => {
     photos[current].classList.add("slideshow-photo--active");
   }, 3500);
 });
-
