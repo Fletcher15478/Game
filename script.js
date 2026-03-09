@@ -1,10 +1,20 @@
 // Step handling
+const introStep = document.getElementById("intro-step");
+const startBtn = document.getElementById("start-btn");
 const step1 = document.getElementById("step-1");
 const step2 = document.getElementById("step-2");
 const step3 = document.getElementById("step-3");
 
 const step1Message = document.getElementById("step-1-message");
 const scoopMessage = document.getElementById("scoop-message");
+
+// Intro: start button
+if (startBtn && introStep && step1) {
+  startBtn.addEventListener("click", () => {
+    introStep.classList.remove("visible");
+    step1.classList.add("visible");
+  });
+}
 
 // Step 1: answer selection
 document.querySelectorAll(".option-btn").forEach((btn) => {
@@ -412,12 +422,12 @@ dinnerTimeText.textContent = `${formatDisplay(
   startDate
 )} or ${formatDisplay(
   saturdayDate
-)} at 6:00 PM (date subject to change based on your availability)`;
+)} at 6:00 PM (timing totally flexible around your availability)`;
 
 calendarBtn.addEventListener("click", () => {
-  const text = encodeURIComponent("Romantic dinner with the sexiest man in the world");
+  const text = encodeURIComponent("Special prize with the sexiest man in the world");
   const details = encodeURIComponent(
-    "A special dinner date for Rachel on either Friday or Saturday (subject to your availability). Bring your cutest smile. 💕"
+    "A special prize night for Rachel on either Friday or Saturday (subject to your availability). Bring your cutest smile. 💕"
   );
 
   const datesParam = `${formatForCalendar(startDate)}/${formatForCalendar(endDate)}`;

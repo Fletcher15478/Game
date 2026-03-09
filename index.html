@@ -3,19 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rachel's Ice Cream Adventure</title>
+    <title>Ice Cream Adventure</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="game-shell">
       <header class="game-header">
-        <h1>Rachel's Ice Cream Adventure</h1>
+        <h1>Ice Cream Adventure</h1>
         <p class="subtitle">A tiny love game made just for you.</p>
       </header>
 
       <main>
+        <!-- Intro: landing page -->
+        <section id="intro-step" class="card visible">
+          <h2 class="card-title">Hi Rachel 💕</h2>
+          <p class="card-text">
+            I made you a tiny ice cream adventure that ends with a
+            very real, very physical special prize with your favorite man.
+          </p>
+          <p class="card-text">
+            When you're ready, tap the button below and we'll start with a very
+            important (and slightly dangerous) question.
+          </p>
+          <button id="start-btn" class="primary-btn">
+            Start the adventure
+          </button>
+        </section>
+
         <!-- Step 1: Cute intro question -->
-        <section id="step-1" class="card visible">
+        <section id="step-1" class="card">
           <h2 class="card-title">Hello Rachel, how are you?</h2>
           <p class="card-text">Choose your potion wisely.</p>
           <div class="options-grid">
@@ -86,7 +102,7 @@
               <div class="win-content">
                 <div class="win-title">YOU WIN ✨</div>
                 <div class="win-subtitle">
-                  Prize unlocked: dinner with the sexiest man in the world.
+                  Special prize unlocked with the sexiest man in the world.
                 </div>
                 <div id="countdown-text" class="countdown-text"></div>
               </div>
@@ -122,8 +138,9 @@
         <section id="step-3" class="card">
           <h2 class="card-title">Congratulations, Rachel! 🎉</h2>
           <p class="card-text">
-            You filled the cone perfectly. Your prize:
-            <strong>dinner with the sexiest man in the world</strong>.
+            You filled the cone perfectly. Your
+            <strong>special prize with the sexiest man in the world</strong>
+            is ready to claim.
           </p>
 
           <div class="photos-row">
@@ -141,7 +158,7 @@
 
           <div class="details-card">
             <p class="details-line">
-              <span class="label">When:</span>
+              <span class="label">When-ish:</span>
               <span id="dinner-time-text"></span>
             </p>
             <p class="details-line">
@@ -151,7 +168,7 @@
           </div>
 
           <button id="calendar-btn" class="primary-btn">
-            Add this dinner to Google Calendar
+            Add this special prize to Google Calendar
           </button>
           <p class="hint">
             (It will open a new Google Calendar tab with everything filled in.)

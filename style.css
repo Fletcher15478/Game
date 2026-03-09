@@ -76,10 +76,12 @@ main {
 
 .options-grid {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  flex-wrap: nowrap;
+  justify-content: center;
   gap: 18px;
   margin: 18px 0 12px;
+  overflow-x: auto;
+  padding-bottom: 6px;
 }
 
 .option-btn {
