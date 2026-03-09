@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rachel's Ice Cream Adventure</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="game-shell">
+      <header class="game-header">
+        <h1>Rachel's Ice Cream Adventure</h1>
+        <p class="subtitle">A tiny love game made just for you.</p>
+      </header>
+
+      <main>
+        <!-- Step 1: Cute intro question -->
+        <section id="step-1" class="card visible">
+          <h2 class="card-title">Hello Rachel, how are you?</h2>
+          <p class="card-text">Choose your potion wisely.</p>
+          <div class="options-grid">
+            <button class="option-btn" data-correct="false">
+              bad
+            </button>
+            <button class="option-btn" data-correct="false">
+              decent
+            </button>
+            <button class="option-btn" data-correct="false">
+              good
+            </button>
+            <button
+              class="option-btn option-btn--special"
+              data-correct="true"
+            >
+              amazing because I have the sexiest, funniest, most handsome, most
+              gloriously perfect man in the entire universe who ended
+              up in my life and makes every day feel like a rom‑com starring us
+            </button>
+          </div>
+          <p id="step-1-message" class="message"></p>
+        </section>
+
+        <!-- Step 2: Ice cream catcher mini-game -->
+        <section id="step-2" class="card">
+          <h2 class="card-title">Catch the falling ice cream</h2>
+          <p class="card-text">
+            Move your mountaineer with the <strong>◀</strong> and <strong>▶</strong> arrow keys
+            (or A / D). On phone, slide your finger left and right.
+          </p>
+
+          <div class="arcade-shell">
+            <div class="game-hud">
+              <div class="hud-pill">
+                <span class="hud-label">Scoops caught</span>
+                <span id="scoops-count" class="hud-value">0 / 10</span>
+              </div>
+              <div class="hud-pill">
+                <span class="hud-label">Controls</span>
+                <span class="hud-value">← → / A D / swipe</span>
+              </div>
+              <div class="hud-pill">
+                <span class="hud-label">Lives</span>
+                <span id="lives-value" class="hud-value hud-value--lives">♥♥♥</span>
+              </div>
+            </div>
+            <div id="playfield" class="playfield">
+              <div class="sky-gradient"></div>
+              <div id="falling-layer" class="falling-layer"></div>
+              <div id="player" class="player">
+                <img
+                  src="images/ChatGPT Image Mar 9, 2026, 11_15_50 AM.png"
+                  alt="Mountaineer with cone"
+                  class="player-img"
+                />
+              </div>
+            </div>
+            <div class="collected-panel">
+              <div class="hud-pill hud-pill--collected">
+                <span class="hud-label">Your scoops</span>
+              </div>
+              <div id="stack-container" class="stack-container"></div>
+            </div>
+            <p id="scoop-message" class="message" aria-live="polite"></p>
+            <div id="status-toast" class="status-toast" aria-hidden="true"></div>
+            <div id="win-overlay" class="win-overlay">
+              <div class="win-content">
+                <div class="win-title">YOU WIN ✨</div>
+                <div class="win-subtitle">
+                  Prize unlocked: dinner with the sexiest man in the world.
+                </div>
+                <div id="countdown-text" class="countdown-text"></div>
+              </div>
+            </div>
+            <div id="revive-overlay" class="revive-overlay">
+              <div class="win-content">
+                <div class="win-title">OUT OF LIVES</div>
+                <div class="win-subtitle">
+                  Oh my goodness I love that sexy man. He just revived you.
+                </div>
+                <button id="revive-ok-btn" class="primary-btn" type="button">
+                  Okay, keep playing
+                </button>
+              </div>
+            </div>
+            <div id="instructions-overlay" class="instructions-overlay">
+              <div class="win-content">
+                <div class="win-title">How to play</div>
+                <div class="win-subtitle">
+                  Catch <strong>10 colorful scoops</strong> in your cone to win a dinner date.
+                  Use the arrow keys or swipe to move. <strong>Ignore the grey scoops</strong> –
+                  they take away a life.
+                </div>
+                <button id="instructions-ok-btn" class="primary-btn" type="button">
+                  Got it, start catching
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Step 3: Reward & calendar -->
+        <section id="step-3" class="card">
+          <h2 class="card-title">Congratulations, Rachel! 🎉</h2>
+          <p class="card-text">
+            You filled the cone perfectly. Your prize:
+            <strong>dinner with the sexiest man in the world</strong>.
+          </p>
+
+          <div class="photos-row">
+            <img
+              src="images/IMG_8534.jpeg"
+              alt="First cute photo"
+              class="reward-photo slideshow-photo slideshow-photo--active"
+            />
+            <img
+              src="images/IMG_8535.jpeg"
+              alt="Second cute photo"
+              class="reward-photo slideshow-photo"
+            />
+          </div>
+
+          <div class="details-card">
+            <p class="details-line">
+              <span class="label">When:</span>
+              <span id="dinner-time-text"></span>
+            </p>
+            <p class="details-line">
+              <span class="label">Where:</span>
+              A surprise location picked just for you.
+            </p>
+          </div>
+
+          <button id="calendar-btn" class="primary-btn">
+            Add this dinner to Google Calendar
+          </button>
+          <p class="hint">
+            (It will open a new Google Calendar tab with everything filled in.)
+          </p>
+        </section>
+      </main>
+
+      <footer class="game-footer">
+        Built with love, ice cream, and a tiny bit of JavaScript.
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
