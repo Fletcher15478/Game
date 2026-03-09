@@ -385,12 +385,11 @@ function getNextFridayAtSix() {
 }
 
 function formatDisplay(date) {
-  return date.toLocaleString(undefined, {
+  // Friendly date string like "Friday, March 14"
+  return date.toLocaleDateString(undefined, {
     weekday: "long",
     month: "long",
     day: "numeric",
-    hour: "numeric",
-    minute: "2-digit",
   });
 }
 
@@ -405,14 +404,20 @@ function formatForCalendar(date) {
 }
 
 const startDate = getNextFridayAtSix();
-const endDate = new Date(startDate.getTime() + 2 * 60 * 60 * 1000); // 2‑hour dinner
+const saturdayDate = new Date(startDate.getTime() + 24 * 60 * 60 * 1000);
+// Calendar event spans from Friday evening through Saturday evening
+const endDate = new Date(startDate.getTime() + 24 * 60 * 60 * 1000);
 
-dinnerTimeText.textContent = `${formatDisplay(startDate)} at 6:00 PM`;
+dinnerTimeText.textContent = `${formatDisplay(
+  startDate
+)} or ${formatDisplay(
+  saturdayDate
+)} at 6:00 PM (date subject to change based on your availability)`;
 
 calendarBtn.addEventListener("click", () => {
   const text = encodeURIComponent("Romantic dinner with the sexiest man in the world");
   const details = encodeURIComponent(
-    "A special dinner date for Rachel. Bring your cutest smile. 💕"
+    "A special dinner date for Rachel on either Friday or Saturday (subject to your availability). Bring your cutest smile. 💕"
   );
 
   const datesParam = `${formatForCalendar(startDate)}/${formatForCalendar(endDate)}`;
